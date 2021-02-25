@@ -1,0 +1,16 @@
+.content {
+    position: fixed;
+    top: 120px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display:flex;
+    align-items: stretch;
+    flex-direction: row;
+  }
+
+  @media screen and (max-width:650px) {
+    .content {
+       flex-direction: column;
+    }
+  }

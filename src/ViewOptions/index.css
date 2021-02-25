@@ -1,0 +1,16 @@
+.ViewOptions {
+    padding: 5px 10px 0 10px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 70px;
+  height: 30px;
+  left: 0;
+  width: calc(100% - 20px);
+}
+
+.ViewOptions_menu {
+  display: flex;
+  flex-direction: row;
+}
