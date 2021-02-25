@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import ViewOptions from "../ViewOptions/index.js";
 import Panel from '../Panel/index.js';
 import Tools from '../Tools/index.js';
-import getSearchParams from '../functions/getSearchParams.js';
+import getSearchParams from '../../functions/getSearchParams.js';
 import './index.css';
 
 const Home = (props) => {

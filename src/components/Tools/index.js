@@ -3,7 +3,7 @@ import {
     Link,
     useLocation
   } from 'react-router-dom';
-import updateLocation from '../functions/updateLocation.js'
+import updateLocation from '../../functions/updateLocation.js'
 const Tools = (props) => {
 
     const location = useLocation();

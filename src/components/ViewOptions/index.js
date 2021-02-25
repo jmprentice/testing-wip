@@ -1,6 +1,6 @@
 import { useHistory, useLocation } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
-import updateLocation from '../functions/updateLocation';
+import updateLocation from '../../functions/updateLocation';
 import './index.css';
 
 const ViewOptions = (props) => {
