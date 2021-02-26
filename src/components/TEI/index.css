@@ -1,0 +1,58 @@
+.TEI {
+    padding: 10px 20px 10px 20px;
+    width: calc(100% - 50px);
+    background-color:  white;
+    position: relative;
+  }
+  
+  tei-anchor:hover{
+    cursor: pointer;
+    color: lightsalmon;
+  }
+  
+  tei-persname:hover, tei-placename:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  tei-back {
+    display:none;
+  }
+  
+  tei-div.active {
+    background-color: LightYellow;
+  }
+  
+  .chapter-view tei-TEI tei-label {
+    display: block;
+    font-family: Arvo, sans-serif;
+    font-weight: normal;
+    font-size: 180%;
+    margin-top: .5rem;
+  }
+  
+  .chiastic-view .Parallel:before { 
+    display: block;
+    font-family: Arvo, sans-serif;
+    font-weight: normal;
+    font-size: 180%;
+    margin-top: .5rem;
+    content: attr(display); 
+  }
+
+  .chiastic-view .Parallel  {
+    display: block;
+  }
+  
+  .chiastic-view .Parallel .Parallel:before { 
+    font-size: 150%;
+  }
+  
+  .chiastic-view .Parallel .Parallel {
+    margin-left: 1rem;
+  }
+  
+  .chiastic-view tei-TEI tei-label {
+    font-style: italic;
+    display: block;
+  }
