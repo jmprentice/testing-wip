@@ -1,6 +1,7 @@
 
 import { 
   BrowserRouter as Router,
+  Redirect,
   Route,
   Switch
 } from 'react-router-dom';
@@ -25,9 +26,12 @@ function App() {
         
         <Router basename={process.env.PUBLIC_URL} history={customHistory}>
           <Header />
+          
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
+            <Route exact path="/">
+              <Redirect to="/text" />
+            </Route>
+            <Route exact path="/text" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/bibliography" component={Bibliography} />
             <Route component={NotFound} status={404} />

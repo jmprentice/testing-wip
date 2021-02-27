@@ -15,8 +15,14 @@ import './index.css';
 const Home = (props) => {
     const { search } = useLocation();
     const [ parallelState, setParallelState ] = useState();
+    const [ view, setView ] = useState("intro");
 
     const params = getSearchParams(search);
+    if(params.view && params.view !== view)  {
+        setView(params.view);
+    }
+
+
     const htmlInput = getHtml();
 
     const htmlToReactParser = new HTMLToReact.Parser();
@@ -38,8 +44,11 @@ const Home = (props) => {
             processNode: (node, children) => {
                 return (
                     <Parallel 
+                        parallelState={parallelState}
                         setParallelState={setParallelState}
-                        parallel={node.attribs && node.attribs.id && node.attribs.id.replace('pr',"'")} 
+                        id={node.attribs && node.attribs.id && node.attribs.id.replace('pr',"'")}
+                        view={view}  
+                        theme="This is where the theme would go"                      
                     >
                         {children}
                     </Parallel>
@@ -80,6 +89,7 @@ const Home = (props) => {
                         id={node.attribs && node.attribs.id && node.attribs.id.replace('pr',"'")}
                         corresp={node.attribs && node.attribs.corresp && node.attribs.corresp.replace('pr',"'").replace('#','')} 
                         parallelState={parallelState}
+                        view={view}
                     >
                         {children}
                     </Corresp>
@@ -98,20 +108,23 @@ const Home = (props) => {
     
     return (
         <div>
-            <ViewOptions params={params}/>
+            <ViewOptions view={view} params={params}/>
             <div className="content">
                 <Panel size="small">
                     <Tools params={params} />
                 </Panel>
-                <Panel size="large">
-                    {["chapter", "chiastic"].includes(params.view) &&
-                        <TEI view={params.view} children={reactComponent} />
+                <Panel size="medium">
+                    {["chapter", "chiastic", "outline"].includes(view) &&
+                        <TEI 
+                            view={view} 
+                            children={reactComponent} 
+                        />
                     }
-                    {params.view === "intro" && 
+                    {view === "intro" && 
                         <h1>Introduction</h1>
                     }
                 </Panel> 
-                {params.view !== "intro" && 
+                {view !== "intro" && 
                     <Panel size="medium" >
                         {correspComponent}                  
                     </Panel>

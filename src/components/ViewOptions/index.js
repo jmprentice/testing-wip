@@ -15,7 +15,7 @@ const ViewOptions = (props) => {
   return (
     <div className="ViewOptions">
         <div className = "ViewOptions_menu">
-            <Nav variant="pills" activeKey={props.params.view ? props.params.view : "chapter"} onSelect={handleViewSelect}>  
+            <Nav variant="pills" activeKey={props.view} onSelect={handleViewSelect}>  
                 <Nav.Item>
                     <Nav.Link eventKey="intro" title="Introduction">
                     Introduction
