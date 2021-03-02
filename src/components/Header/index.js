@@ -6,17 +6,23 @@ import './index.css';
 
 const Header = () => {
     return (
-        <Navbar className="Header" bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="/text">Digital Genesis Fall 2020</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse>
-          <Nav className="Header_nav-items">
-            <Nav.Link as={NavLink} to="/text">Home</Nav.Link>
-            <Nav.Link as={NavLink} to="/about">About</Nav.Link>
-            <Nav.Link as={NavLink} to="/bibliography">Bibliography</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+     
+          <Navbar bg="dark" variant="dark" expand="lg">
+             <div className="Header" >
+            <Navbar.Brand href="/text">Digital Genesis Fall 2020</Navbar.Brand>
+            <div><Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse>
+                <Nav className="Header_nav-items">
+                  <Nav.Link as={NavLink} to="/introduction">Introduction</Nav.Link>
+                  <Nav.Link as={NavLink} to="/text">Text</Nav.Link>
+                  <Nav.Link as={NavLink} to="/bibliography">Bibliography</Nav.Link>
+                  <Nav.Link as={NavLink} to="/about">About</Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </div>
+            </div>
+        </Navbar>
+     
     );
 }
 

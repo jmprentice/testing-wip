@@ -7,13 +7,17 @@ const Parallel = (props) => {
         className = className += ' Parallel_active';
     }
 
-    const handleParallelChange = () => {
+    const handleParallelChange = (event) => {
         props.setParallelState(props.id);
+        //event.stopPropagation();
     }
 
         
     return (
         <span className={className} onMouseOver={handleParallelChange}>
+            {props.view === "chiastic" &&
+                <h1>{props.id}</h1>
+            }
             {props.view !== "outline" &&
                 <span >
                     {props.children}

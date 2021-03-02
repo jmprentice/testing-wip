@@ -17,11 +17,6 @@ const ViewOptions = (props) => {
         <div className = "ViewOptions_menu">
             <Nav variant="pills" activeKey={props.view} onSelect={handleViewSelect}>  
                 <Nav.Item>
-                    <Nav.Link eventKey="intro" title="Introduction">
-                    Introduction
-                    </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
                     <Nav.Link eventKey="chapter" title="Chapter text">
                     Chapter text
                     </Nav.Link>

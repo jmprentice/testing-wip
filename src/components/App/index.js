@@ -8,6 +8,7 @@ import {
 import { createBrowserHistory } from 'history';
 import Header from '../Header/index.js';
 import About from '../About/index.js';
+import Introduction from '../Introduction/index.js';
 import Home from '../Home/index.js';
 import Bibliography from '../Bibliography/index.js';
 import NotFound from '../NotFound/index.js';
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/">
               <Redirect to="/text" />
             </Route>
+            <Route exact path="/introduction" component={Introduction} />
             <Route exact path="/text" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/bibliography" component={Bibliography} />

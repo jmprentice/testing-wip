@@ -15,7 +15,8 @@ import './index.css';
 const Home = (props) => {
     const { search } = useLocation();
     const [ parallelState, setParallelState ] = useState();
-    const [ view, setView ] = useState("intro");
+    const [ view, setView ] = useState("chapter");
+    const [ secondaryPanelVisibility, setSecondaryPanelVisibility ] = useState(false);
 
     const params = getSearchParams(search);
     if(params.view && params.view !== view)  {
@@ -46,7 +47,7 @@ const Home = (props) => {
                     <Parallel 
                         parallelState={parallelState}
                         setParallelState={setParallelState}
-                        id={node.attribs && node.attribs.id && node.attribs.id.replace('pr',"'")}
+                        id={node.attribs && node.attribs.id && node.attribs.id.replace(/pr/g,"'")}
                         view={view}  
                         theme="This is where the theme would go"                      
                     >
@@ -86,8 +87,8 @@ const Home = (props) => {
             processNode: (node, children) => {
                 return (
                     <Corresp 
-                        id={node.attribs && node.attribs.id && node.attribs.id.replace('pr',"'")}
-                        corresp={node.attribs && node.attribs.corresp && node.attribs.corresp.replace('pr',"'").replace('#','')} 
+                        id={node.attribs && node.attribs.id && node.attribs.id.replace(/pr/g,"'")}
+                        corresp={node.attribs && node.attribs.corresp && node.attribs.corresp.replace(/pr/g,"'").replace('#','')} 
                         parallelState={parallelState}
                         view={view}
                     >
@@ -109,26 +110,27 @@ const Home = (props) => {
     return (
         <div>
             <ViewOptions view={view} params={params}/>
+            <h1>{parallelState}</h1>
             <div className="content">
-                <Panel size="small">
-                    <Tools params={params} />
-                </Panel>
                 <Panel size="medium">
-                    {["chapter", "chiastic", "outline"].includes(view) &&
-                        <TEI 
-                            view={view} 
-                            children={reactComponent} 
-                        />
-                    }
-                    {view === "intro" && 
-                        <h1>Introduction</h1>
-                    }
+                    <TEI 
+                        view={view} 
+                        children={reactComponent} 
+                    />
                 </Panel> 
-                {view !== "intro" && 
-                    <Panel size="medium" >
-                        {correspComponent}                  
-                    </Panel>
-                }
+      
+                <Panel 
+                    size="medium" 
+                    visibility={secondaryPanelVisibility}
+                    setVisibility={setSecondaryPanelVisibility}
+                >
+                    { !parallelState &&
+                        <p className="Home_hint">Hover over a section of the text to view its chiastic parallel in this panel.</p>
+                    }
+                    {correspComponent}  
+                          
+                </Panel>
+          
             </div>
         </div>
     );
