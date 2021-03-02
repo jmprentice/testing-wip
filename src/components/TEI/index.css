@@ -1,8 +1,10 @@
 .TEI {
-    
-  
     background-color:  white;
     position: relative;
+  }
+
+  tei-head {
+    font-size: 180%;
   }
   
   tei-anchor:hover{

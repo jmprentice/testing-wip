@@ -110,9 +110,8 @@ const Home = (props) => {
     return (
         <div>
             <ViewOptions view={view} params={params}/>
-            <h1>{parallelState}</h1>
-            <div className="content">
-                <Panel size="medium">
+            <div className="Home_content">
+                <Panel size="large">
                     <TEI 
                         view={view} 
                         children={reactComponent} 

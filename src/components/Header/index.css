@@ -3,3 +3,8 @@
     display: flex;
     justify-items: flex-end;
 }
+
+.Header {
+    display: flex;
+    justify-items: space-between;
+}

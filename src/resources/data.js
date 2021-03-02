@@ -14,42 +14,42 @@ const getHtml = () => { return (`
         </tei-filedesc>
     </span></tei-teiheader>
     <tei-text type="book" data-origname="text" data-origatts="type" data-processed="">
-<tei-body data-origname="body" data-processed="">
-    <tei-head data-origname="head" data-level="1" data-processed=""><!-- Jason: we ought to agree on a title for the following text (Chapters 6-9). --></tei-head>
-    <tei-div type="chiasm" data-origname="div" data-origatts="type" data-processed="">
-        <tei-div type="parallel" xml:id="A" id="A" corresp="#Apr" data-origname="div" data-origatts="type xml:id corresp" data-processed="">
-            <tei-label type="chtitle" xml:id="ch6" id="ch6" data-origname="label" data-origatts="type xml:id" data-processed="">Chapter 6
-            </tei-label>
-            <tei-ab data-origname="ab" data-processed="">
-                <tei-seg ana="#yahwist" data-origname="seg" data-origatts="ana" data-processed="">
-                    <tei-seg type="verse" xml:id="ch06v1" id="ch06v1" data-origname="seg" data-origatts="type xml:id" data-processed="">1
-                    </tei-seg> 
-                    And it came to pass, when men
-                    <tei-anchor xml:id="a001" id="a001" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> 
-                    began to multiply on the face of the earth, and daughters were born unto them, 
-                    <tei-seg type="verse" xml:id="ch06v2" id="ch06v2" data-origname="seg" data-origatts="type xml:id" data-processed="">2
-                    </tei-seg> 
-                    that the sons of God
-                    <tei-anchor xml:id="a002" id="a002" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> 
-                    saw the daughters of men that they were fair;
-                    <tei-anchor xml:id="a003" id="a003" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> and they took them wives, whomsoever they chose. 
-                    <tei-seg type="verse" xml:id="ch06v3" id="ch06v3" data-origname="seg" data-origatts="type xml:id" data-processed="">3
-                    </tei-seg>
-                    And the LORD said: ‘My spirit shall not abide in man
-                    <tei-anchor xml:id="a004" id="a004" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> 
-                    for ever, for that he also is flesh; therefore shall his days be a hundred and twenty years.’
-                    <tei-anchor xml:id="a005" id="a005" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor>
-                    <tei-seg type="verse" xml:id="ch06v4" id="ch06v4" data-origname="seg" data-origatts="type xml:id" data-processed="">4
-                    </tei-seg> 
-                    The Nephilim
-                    <tei-anchor xml:id="a006" id="a006" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> 
-                    were in the earth in those days, and also after that, when the sons of God came in unto the daughters of men, and they bore children to them; the same were the mighty men
-                    <tei-anchor xml:id="a007" id="a007" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> 
-                    that were of old, the men of renown
-                </tei-seg>
-                <tei-anchor xml:id="a008" id="a008" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor>
-            </tei-ab>
-        </tei-div>
+        <tei-body data-origname="body" data-processed="">
+            <tei-head data-origname="head" data-level="1" data-processed="">The Flood</tei-head>
+            <tei-div type="chiasm" data-origname="div" data-origatts="type" data-processed="">
+                <tei-div type="parallel" xml:id="A" id="A" corresp="#Apr" data-origname="div" data-origatts="type xml:id corresp" data-processed="">
+                    <tei-label type="chtitle" xml:id="ch6" id="ch6" data-origname="label" data-origatts="type xml:id" data-processed="">Chapter 6</tei-label>
+                    <tei-ab data-origname="ab" data-processed="">
+                    <tei-seg ana="#yahwist" data-origname="seg" data-origatts="ana" data-processed="">
+                            <tei-seg type="verse" xml:id="ch06v1" id="ch06v1" data-origname="seg" data-origatts="type xml:id" data-processed="">1
+                            </tei-seg> 
+                            And it came to pass, when men
+                            <tei-anchor xml:id="a001" id="a001" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> 
+                            began to multiply on the face of the earth, and daughters were born unto them, 
+                            <tei-seg type="verse" xml:id="ch06v2" id="ch06v2" data-origname="seg" data-origatts="type xml:id" data-processed="">2
+                            </tei-seg> 
+                            that the sons of God
+                            <tei-anchor xml:id="a002" id="a002" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> 
+                            saw the daughters of men that they were fair;
+                            <tei-anchor xml:id="a003" id="a003" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> and they took them wives, whomsoever they chose. 
+                            <tei-seg type="verse" xml:id="ch06v3" id="ch06v3" data-origname="seg" data-origatts="type xml:id" data-processed="">3
+                            </tei-seg>
+                            And the LORD said: ‘My spirit shall not abide in man
+                            <tei-anchor xml:id="a004" id="a004" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> 
+                            for ever, for that he also is flesh; therefore shall his days be a hundred and twenty years.’
+                            <tei-anchor xml:id="a005" id="a005" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor>
+                            <tei-seg type="verse" xml:id="ch06v4" id="ch06v4" data-origname="seg" data-origatts="type xml:id" data-processed="">4
+                            </tei-seg> 
+                            The Nephilim
+                            <tei-anchor xml:id="a006" id="a006" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> 
+                            were in the earth in those days, and also after that, when the sons of God came in unto the daughters of men, and they bore children to them; the same were the mighty men
+                            <tei-anchor xml:id="a007" id="a007" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor> 
+                            that were of old, the men of renown
+                        </tei-seg>
+                        <tei-anchor xml:id="a008" id="a008" data-origname="anchor" data-origatts="xml:id" data-empty="" data-processed=""></tei-anchor>
+                    </tei-ab>
+                </tei-div>
+          
         <tei-div type="parallel" xml:id="B" id="B" corresp="#Bpr" data-origname="div" data-origatts="type xml:id corresp" data-processed="">
             <tei-ab data-origname="ab" data-processed="">
                 <tei-seg ana="#yahwist" data-origname="seg" data-origatts="ana" data-processed="">
@@ -685,13 +685,13 @@ Alt. Trans.: "humankind" (Alter 38))</span></tei-note>
         
         Comment: "God's speech is difficult to translate, much less to understand." (Kass 160)
         
-        Comment: The verb is "a verb that appears nowhere else in the Hebrew Bible, and its meaning is not known. Dictionaries tend to say things like 'context suggests "remain,"' and it does, but I would rather leave a gap." (Good 67)</span><span data-before="1" data-after="1">(Heb.: yadon be'adam (Kass 160)
+        Comment: The verb is "appears nowhere else in the Hebrew Bible, and its meaning is not known. Dictionaries tend to say things like 'context suggests "remain,"' and it does, but I would rather leave a gap." (Good 67)</span><span data-before="1" data-after="1">(Heb.: yadon be'adam (Kass 160)
         
         Alt. Trans.: "judge from within man" (Kass 160)
         
         Comment: "God's speech is difficult to translate, much less to understand." (Kass 160)
         
-        Comment: The verb is "a verb that appears nowhere else in the Hebrew Bible, and its meaning is not known. Dictionaries tend to say things like 'context suggests "remain,"' and it does, but I would rather leave a gap." (Good 67))</span></tei-note>
+        Comment: The verb is "appears nowhere else in the Hebrew Bible, and its meaning is not known. Dictionaries tend to say things like 'context suggests "remain,"' and it does, but I would rather leave a gap." (Good 67))</span></tei-note>
     <tei-note target="#a005" data-origname="note" data-origatts="target" data-processed=""><span hidden="" data-original=""><!-- Comment by Esteban. --></span><span data-before="1" data-after="1">(<!-- Comment by Esteban. -->)</span></tei-note>
     <tei-note target="#a006" data-origname="note" data-origatts="target" data-processed=""><span hidden="" data-original="">Heb. root: naphal = "to fall" or "to cause to fall" (Kass 161)
         
@@ -852,10 +852,12 @@ Comment: "This is the first instance of a common convention of biblical narrativ
     <tei-note target="#a046" data-origname="note" data-origatts="target" data-processed=""><span hidden="" data-original="">Heb.: = "began" or "being profane" (Kass 203)</span><span data-before="1" data-after="1">(Heb.: = "began" or "being profane" (Kass 203))</span></tei-note>
     <tei-note target="#a047" data-origname="note" data-origatts="target" data-processed=""><span hidden="" data-original="">Comment: "In the ancient East Mediterranean world wine was something more than a beverage gladdening the heart. For the Greeks wine, fire, and phallus formed a triad denoting sexuality. [...] The biblical Song of Songs reveals this same interrelation of wine, fire, and sex. [...] Wine gave power to lovers, heightening their desire and enhancing their vigor for lovemaking. [...] The special powers ascribed to wine and other intoxicants require a drastic revision in popular opinion of Noah: in all likelihood his intoxication did not stem from any deficiency of character but from his wholehearted attempt to execute the command he received from God [to repopulate the earth] upon disembarking from the ark." (Cohen 3-7)</span><span data-before="1" data-after="1">(Comment: "In the ancient East Mediterranean world wine was something more than a beverage gladdening the heart. For the Greeks wine, fire, and phallus formed a triad denoting sexuality. [...] The biblical Song of Songs reveals this same interrelation of wine, fire, and sex. [...] Wine gave power to lovers, heightening their desire and enhancing their vigor for lovemaking. [...] The special powers ascribed to wine and other intoxicants require a drastic revision in popular opinion of Noah: in all likelihood his intoxication did not stem from any deficiency of character but from his wholehearted attempt to execute the command he received from God [to repopulate the earth] upon disembarking from the ark." (Cohen 3-7))</span></tei-note>
     <tei-note target="#a048" data-origname="note" data-origatts="target" data-processed=""><span hidden="" data-original="">Comment: "In fact, 'his tent' is a questionable translation; the noun has an ending that suggests 'her tent.' Hence rabbinic scholars have interpreted the passage as referring to the tent of Noah's wife." (Kikawada and Quinn 102)</span><span data-before="1" data-after="1">(Comment: "In fact, 'his tent' is a questionable translation; the noun has an ending that suggests 'her tent.' Hence rabbinic scholars have interpreted the passage as referring to the tent of Noah's wife." (Kikawada and Quinn 102))</span></tei-note>
-    <tei-note target="#a049" data-origname="note" data-origatts="target" data-processed=""><span hidden="" data-original="">Comment: "No one has ever figured out exactly what it is that Ham does to Noah. Some, as early as the classical Midrash, have glimpsed here a Zeus-Chronos story in which the son castrates the father or, alternately, penetrates him sexually. The latter possibility is reinforced by the fact that 'to see the nakednes of' frequently means 'to copulate with.'" (Alter 52-53)
-        Comment: "Ham perhaps sees his father and mother in an act of intercourse, or at least attempted intercourse. [. . .] One answer suggests itself. Ham commits incest with his mother after his father is rendered incapacitated by drink (and after Noah arouses the mother but proves incapable of satisfying her). Ham supplants his father, much as the sons of God before supplanted other potential human fathers. " (Kikawada and Quinn 102-3)
-        Comment: "The origins of the whole must be stated in some form, but they must also be forgotten. From the Biblical point of view they may not be hearkened back to either as a paradigm or as a way of understanding. The temporal beginnings must be superseded by the Covenant. [. . .] When Ham looked upon his father's nakedness he implicitly rejected the New Way insofar as that Way was essentially new. Either by design or by accident he gazed upon those origins which lie in back of the Covenant." (Sacks 98)</span><span data-before="1" data-after="1">(Comment: "No one has ever figured out exactly what it is that Ham does to Noah. Some, as early as the classical Midrash, have glimpsed here a Zeus-Chronos story in which the son castrates the father or, alternately, penetrates him sexually. The latter possibility is reinforced by the fact that 'to see the nakednes of' frequently means 'to copulate with.'" (Alter 52-53)
-        Comment: "Ham perhaps sees his father and mother in an act of intercourse, or at least attempted intercourse. [. . .] One answer suggests itself. Ham commits incest with his mother after his father is rendered incapacitated by drink (and after Noah arouses the mother but proves incapable of satisfying her). Ham supplants his father, much as the sons of God before supplanted other potential human fathers. " (Kikawada and Quinn 102-3)
+    <tei-note target="#a049" data-origname="note" data-origatts="target" data-processed=""><span hidden="" data-original="">Comment: This curse mirrors the one in Chapter 6, when God condemns all flesh because it is wicked.
+        Comment: "No one has ever figured out exactly what it is that Ham does to Noah. Some, as early as the classical Midrash, have glimpsed here a Zeus-Chronos story in which the son castrates the father or, alternately, penetrates him sexually. The latter possibility is reinforced by the fact that 'to see the nakednes of' frequently means 'to copulate with.'" (Alter 52-53)
+        Comment: "Ham perhaps sees his father and mother in an act of intercourse, or at least attempted intercourse. [. . .] One answer suggests itself. Ham commits incest with his mother after his father is rendered incapacitated by drink (and after Noah arouses the mother but proves incapable of satisfying her). Ham supplants his father, much as the sons of God before supplanted other potential human fathers." (Kikawada and Quinn 102-3)
+        Comment: "The origins of the whole must be stated in some form, but they must also be forgotten. From the Biblical point of view they may not be hearkened back to either as a paradigm or as a way of understanding. The temporal beginnings must be superseded by the Covenant. [. . .] When Ham looked upon his father's nakedness he implicitly rejected the New Way insofar as that Way was essentially new. Either by design or by accident he gazed upon those origins which lie in back of the Covenant." (Sacks 98)</span><span data-before="1" data-after="1">(Comment: This curse mirrors the one in Chapter 6, when God condemns all flesh because it is wicked.
+        Comment: "No one has ever figured out exactly what it is that Ham does to Noah. Some, as early as the classical Midrash, have glimpsed here a Zeus-Chronos story in which the son castrates the father or, alternately, penetrates him sexually. The latter possibility is reinforced by the fact that 'to see the nakednes of' frequently means 'to copulate with.'" (Alter 52-53)
+        Comment: "Ham perhaps sees his father and mother in an act of intercourse, or at least attempted intercourse. [. . .] One answer suggests itself. Ham commits incest with his mother after his father is rendered incapacitated by drink (and after Noah arouses the mother but proves incapable of satisfying her). Ham supplants his father, much as the sons of God before supplanted other potential human fathers." (Kikawada and Quinn 102-3)
         Comment: "The origins of the whole must be stated in some form, but they must also be forgotten. From the Biblical point of view they may not be hearkened back to either as a paradigm or as a way of understanding. The temporal beginnings must be superseded by the Covenant. [. . .] When Ham looked upon his father's nakedness he implicitly rejected the New Way insofar as that Way was essentially new. Either by design or by accident he gazed upon those origins which lie in back of the Covenant." (Sacks 98))</span></tei-note>
 </tei-div>
 <tei-div type="editorial" data-origname="div" data-origatts="type" data-processed="">
