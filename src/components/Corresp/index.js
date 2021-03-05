@@ -10,7 +10,7 @@ const Corresp = (props) => {
         <span className="Corresp">
             {["chiastic", "chapter"].includes(props.view) && props.parallelState && props.corresp && props.parallelState === props.corresp && 
                 <div>
-                    <h1>{props.id}</h1>
+                    <p className="Corresp_label">Chiastic Parallel: {props.id}</p>
                     {props.children}
                 </div>   
             }

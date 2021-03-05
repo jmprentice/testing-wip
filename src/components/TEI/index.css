@@ -3,6 +3,10 @@
     position: relative;
   }
 
+.TEI_paper {
+  padding: 50px;
+}
+
   tei-head {
     font-size: 180%;
   }
@@ -29,7 +33,7 @@
     display: block;
     font-family: Arvo, sans-serif;
     font-weight: normal;
-    font-size: 180%;
+    font-size: 150%;
     margin-top: .5rem;
   }
   
@@ -51,7 +55,7 @@
   }
   
   .chiastic-view .Parallel .Parallel {
-    margin-left: 1rem;
+    margin-left: 3rem;
   }
   
   .chiastic-view tei-TEI tei-label {

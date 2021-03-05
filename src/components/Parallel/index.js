@@ -9,14 +9,14 @@ const Parallel = (props) => {
 
     const handleParallelChange = (event) => {
         props.setParallelState(props.id);
-        //event.stopPropagation();
+       //event.stopPropagation();
     }
 
         
     return (
         <span className={className} onMouseOver={handleParallelChange}>
             {props.view === "chiastic" &&
-                <h1>{props.id}</h1>
+                <p>{props.id}</p>
             }
             {props.view !== "outline" &&
                 <span >

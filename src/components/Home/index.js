@@ -7,16 +7,20 @@ import TEI from '../TEI/index.js';
 import Tools from '../Tools/index.js';
 import Parallel from '../Parallel/index.js';
 import Corresp from '../Corresp/index.js';
+import CorrespPanel from '../CorrespPanel/index.js';
 import getHtml from '../../resources/data.js';
 import getSearchParams from '../../functions/getSearchParams.js';
 
 import './index.css';
+
 
 const Home = (props) => {
     const { search } = useLocation();
     const [ parallelState, setParallelState ] = useState();
     const [ view, setView ] = useState("chapter");
     const [ secondaryPanelVisibility, setSecondaryPanelVisibility ] = useState(false);
+   // const [ parallels, setParallels ] = useState({});
+
 
     const params = getSearchParams(search);
     if(params.view && params.view !== view)  {
@@ -24,7 +28,33 @@ const Home = (props) => {
     }
 
 
+    
+
+    /*const getParallels = (element) => {
+        const parallels = {};
+        const chiasms = element.querySelectorAll('tei-div[type="chiasm"]');
+        chiasms.forEach( chiasm => {
+            const parallelElements = chiasm.querySelectorAll('tei-div[type="parallel"]');
+            parallelElements.forEach( parallelElement => {
+                let parallelId = parallelElement.getAttribute("xml:id");
+                let correspId = parallelElement.getAttribute("corresp");
+                if(parallelId && correspId) {
+                    parallelId = parallelId.replace(/pr/g,"'").replace('#','');
+                    correspId = correspId.replace(/pr/g,"'").replace('#','');
+                    parallels[parallelId] = {
+                        correspId,
+                        element: htmlToReactParser.parseWithInstructions(htmlInput, isValidNode, correspProcessingInstructions)
+                    }    
+                }
+            })
+        });
+        return parallels;
+    }*/
+    
     const htmlInput = getHtml();
+
+    
+   
 
     const htmlToReactParser = new HTMLToReact.Parser();
     const isValidNode = () => { return true; };
@@ -106,7 +136,10 @@ const Home = (props) => {
     ];
     const correspComponent = htmlToReactParser.parseWithInstructions(htmlInput, isValidNode, correspProcessingInstructions);
 
-    
+   /*const domParser = new DOMParser();
+   const document = domParser.parseFromString(htmlInput, "text/html");
+
+   setParallels(getParallels(document));*/
     return (
         <div>
             <ViewOptions view={view} params={params}/>
@@ -126,7 +159,9 @@ const Home = (props) => {
                     { !parallelState &&
                         <p className="Home_hint">Hover over a section of the text to view its chiastic parallel in this panel.</p>
                     }
-                    {correspComponent}  
+                    <CorrespPanel>
+                        {correspComponent}
+                    </CorrespPanel> 
                           
                 </Panel>
           
