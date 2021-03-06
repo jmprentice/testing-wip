@@ -1,0 +1,10 @@
+.Header_nav-items {
+    font-size: medium;
+    display: flex;
+    justify-items: flex-end;
+}
+
+.Header {
+    display: flex;
+    justify-items: flex-end;
+}
