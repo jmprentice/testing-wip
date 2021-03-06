@@ -9,17 +9,9 @@ import Anchor from '../Anchor/index.js';
 import Parallel from '../Parallel/index.js';
 import Corresp from '../Corresp/index.js';
 import CorrespPanel from '../CorrespPanel/index.js';
-import NotePanel from '../NotePanel/index.js';
 import Note from '../Note/index.js';
 import getHtml from '../../resources/data.js';
 import getSearchParams from '../../functions/getSearchParams.js';
-
-
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import './index.css';
 
@@ -38,21 +30,6 @@ const Home = (props) => {
     }
 
     const htmlInput = getHtml();
-
-    const domParser = new DOMParser();
-    const doc = domParser.parseFromString(htmlInput, "text/html");
-    const parallels = doc.querySelectorAll('tei-div[type="parallel"]');
-    const notesPerParallel = {};
-    parallels.forEach( parallel => {
-        const parallelId = parallel.getAttribute("id").replace(/pr/g,"'").replace("#","");
-        notesPerParallel[parallelId] = [];
-        const anchors = parallel.querySelectorAll('tei-anchor');
-
-        anchors.forEach( anchor => {
-            const anchorId = anchor.getAttribute("id").replace(/#a0*/,"");
-            notesPerParallel[parallelId].push(anchorId);
-        })
-    });
 
     const htmlToReactParser = new HTMLToReact.Parser();
     const isValidNode = () => { return true; };
@@ -165,8 +142,6 @@ const Home = (props) => {
                     <Note
                         target={node.attribs.target && node.attribs.target.replace(/#/g,"")}
                         noteState={noteState}
-                        notesPerParallel={notesPerParallel}
-                        parallelState = {parallelState}
                     >
                         {[children[1]]}
                     </Note>
@@ -202,16 +177,7 @@ const Home = (props) => {
                     visibility={secondaryPanelVisibility}
                     setVisibility={setSecondaryPanelVisibility}
                 >
-                      <Accordion>
-                        <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                        >
-                        Chiastic Parallel
-                        </AccordionSummary>
-                        <AccordionDetails>
-                       
+                                  
                         { !parallelState &&
                         <p className="Home_hint">Hover over a section of the text to view its chiastic parallel in this panel.</p>
                     }
@@ -219,33 +185,7 @@ const Home = (props) => {
                         {correspComponent}
                     </CorrespPanel> 
                        
-                        </AccordionDetails>
-                    </Accordion>
-
-                    <Accordion
-                        expanded="true"
-                    >
-                        <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                        >
-                        Notes
-                        </AccordionSummary>
-                        <AccordionDetails>
-                       
-                        { !parallelState &&
-                        <p className="Home_hint">Click on a speech bubble in the text to view the note.</p>
-                    }
-                   <NotePanel>
-                        {noteComponent}
-                    </NotePanel>
-                       
-                        </AccordionDetails>
-                    </Accordion>
-                    
-                    
-                    
+                        
                 </Panel>
           
             </div>
