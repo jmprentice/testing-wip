@@ -10,6 +10,7 @@ const Anchor = (props) => {
 
     const handleClick = () => {
         props.setNoteState(props.id)
+        props.setNoteVisible(true);
         console.log(props.id);
     };
     return (

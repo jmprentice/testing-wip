@@ -21,8 +21,9 @@ const Home = (props) => {
     const { search } = useLocation();
     const [ parallelState, setParallelState ] = useState();
     const [ view, setView ] = useState("chapter");
-    const [ secondaryPanelVisibility, setSecondaryPanelVisibility ] = useState(false);
+    const [ secondaryPanelVisible, setSecondaryPanelVisible ] = useState(false);
     const [ noteState, setNoteState ] = useState("");
+    const [ noteVisible, setNoteVisible ] = useState(false);
 
     const params = getSearchParams(search);
     if(params.view && params.view !== view)  {
@@ -52,6 +53,7 @@ const Home = (props) => {
                 return (
                     <Anchor
                         id={id}
+                        setNoteVisible={setNoteVisible}
                         setNoteState={setNoteState}
                     />
                 );
@@ -72,6 +74,33 @@ const Home = (props) => {
                     >
                         {children}
                     </Parallel>
+                );
+            }
+        },
+        {
+
+            shouldProcessNode: node => {
+                
+                return (
+                    node.name === 'tei-note' && 
+                    node.attribs 
+                );
+            },
+            processNode: (node, children) => {
+                let note = node.childNodes[1].childNodes[0].data;
+                note = note.replace(/^\(/, "");
+                note = note.replace(/\)$/, "");
+                return (
+                    <Note
+                        target={node.attribs.target && node.attribs.target.replace(/#/g,"")}
+                        noteState={noteState}
+                        noteVisible={noteVisible}
+                        setNoteVisible={setNoteVisible}
+                        note={note}
+                    >
+                        
+                    </Note>
+                    
                 );
             }
         },
@@ -126,7 +155,7 @@ const Home = (props) => {
     ];
     const correspComponent = htmlToReactParser.parseWithInstructions(htmlInput, isValidNode, correspProcessingInstructions);
 
-    const noteProcessingInstructions = [
+    /*const noteProcessingInstructions = [
         
         {
 
@@ -158,7 +187,7 @@ const Home = (props) => {
         }
     ];
     const noteComponent = htmlToReactParser.parseWithInstructions(htmlInput, isValidNode, noteProcessingInstructions);
-
+*/
     
 
     return (
@@ -174,8 +203,8 @@ const Home = (props) => {
       
                 <Panel 
                     size="medium" 
-                    visibility={secondaryPanelVisibility}
-                    setVisibility={setSecondaryPanelVisibility}
+                    visibility={secondaryPanelVisible}
+                    setVisibility={setSecondaryPanelVisible}
                 >
                                   
                         { !parallelState &&
