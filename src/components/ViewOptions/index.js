@@ -1,5 +1,6 @@
 import { useHistory, useLocation } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
+import Form from 'react-bootstrap/Form';
 import updateLocation from '../../functions/updateLocation';
 import './index.css';
 
@@ -10,6 +11,10 @@ const ViewOptions = (props) => {
     const handleViewSelect = (eventKey) => {      
         const newLocation = updateLocation(location, "view", eventKey);
         history.push(newLocation);
+    }
+
+    const handleSourceToggle = event => {
+        props.setSourcesVisible(event.target.checked);
     }
 
   return (
@@ -31,8 +36,17 @@ const ViewOptions = (props) => {
                     Chiastic outline
                     </Nav.Link>
                 </Nav.Item>
-            </Nav>
+            </Nav> 
         </div>       
+        <div>
+            <Form.Group >
+                <Form.Check type="checkbox" checked={props.sourcesVisible} label="Show documentary sources" onChange={handleSourceToggle}/>
+                {props.sourcesVisible &&
+                    <span>(<span className="yahwist">yahwist</span>, <span className="priestly">priestly</span>)</span>
+                }
+            </Form.Group>
+            
+        </div>
     </div>
   );
     

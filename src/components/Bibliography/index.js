@@ -20,14 +20,13 @@ const Bibliography = () => {
                 <p className="Bibliography_citation">Good, Edwin. <i>Genesis 1-11: Tales of the Earliest World</i>. Stanford UP, 2011. ProQuest Ebook Central, <a href="http://ebookcentral.proquest.com/lib/bu/detail.action?docID=753410">http://ebookcentral.proquest.com/lib/bu/detail.action?docID=753410</a>.</p>
                 <p className="Bibliography_citation">"Documentary hypothesis." <i>New World Encyclopedia</i>, 26 Aug 2020, 20:22 UTC. 10 Dec 2020, 16:18 <a href="https://www.newworldencyclopedia.org/p/index.php?title=Documentary_hypothesis">https://www.newworldencyclopedia.org/p/index.php?title=Documentary_hypothesis</a>.</p>
                 <p className="Bibliography_citation">Jewish Publication Society of America. <i>The Holy Scriptures</i>. Jewish Publication Society of America, 1917. <a href="https://jps.org/wp-content/uploads/2015/10/Tanakh1917.pdf">https://jps.org/wp-content/uploads/2015/10/Tanakh1917.pdf</a></p> 
-                Kass, Leon. The Beginning of Wisdom: Reading Genesis. U of Chicago P, 2003.
                 <p className="Bibliography_citation">Kass, Leon. <i>The Beginning of Wisdom: Reading Genesis</i>. U of Chicago P, 2003.</p>
                 <p className="Bibliography_citation">Kikawada, Isaac M., and Arthur Quinn. <i>Before Abraham Was: The Unity of Genesis 1-11</i>. Abingdon, 1985. Hathitrust.</p>
                 <p className="Bibliography_citation">Kraeling, E. G. “The Interpretation of the Name Noah in Gen. 5:29.” <i>Journal of Biblical Literature</i>, vol. 48, no. 3/4, 1929, pp. 138–143. JSTOR, <a href="www.jstor.org/stable/3259720">www.jstor.org/stable/3259720</a>. Accessed 7 Dec. 2020.</p>
                 <p className="Bibliography_citation">"Masoretic text." <i>Britannica Academic</i>, Encyclopædia Britannica, 20 Jul. 1998. <a href="academic-eb-com.ezproxy.bu.edu/levels/collegiate/article/Masoretic-text/51280">academic-eb-com.ezproxy.bu.edu/levels/collegiate/article/Masoretic-text/51280</a>. Accessed 27 Feb. 2021.</p>
                 <p className="Bibliography_citation">Sacks, Robert. <i>The Lion and the Ass: A Commentary on the Book of Genesis</i>. <a href="https://archive.org/stream/RobertSacksACommentaryOnTheBookOfGenesis/">https://archive.org/stream/RobertSacksACommentaryOnTheBookOfGenesis/Robert-Sacks-A-Commentary-on-the-Book-of-Genesis_djvu.txt</a>.</p>
                 <p className="Bibliography_citation">Schniedewind, William. “Origins of the Written Bible.” <i>PBS</i>, Public Broadcasting Service, 18 Nov. 2008, <a href="www.pbs.org/wgbh/nova/article/origins-written-bible/">www.pbs.org/wgbh/nova/article/origins-written-bible/</a>.</p>
-                von Rad, Gerhard. <i>Genesis</i>. Westminster P, 1972.
+                <p className="Bibliography_citation">von Rad, Gerhard. <i>Genesis</i>. Westminster P, 1972.</p>
                 <p className="Bibliography_citation">Welch, John W. <i>Chiasmus in Antiquity</i>. Research P Publications, 1981.</p>
             </Page>
         </div>

@@ -18,9 +18,11 @@ const Note = (props) => {
                         <span className="Note_label">
                             <sup>n{props.target.replace(/^a0*/,"")} </sup>
                             
-                            {noteSections.map(section => {
+                            {noteSections.map((section, index )=> {
                                 return (
-                                    <div className="Note_section">
+                                    <div
+                                        key={`${props.target}_${index}`} 
+                                        className="Note_section">
                                         {section &&
                                             section
                                         }

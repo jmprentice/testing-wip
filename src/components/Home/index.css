@@ -14,7 +14,11 @@
     font-style: italic;
   }
 
-  @media screen and (max-width:650px) {
+  .yahwist, .sources-true tei-seg[ana="#yahwist"] {
+    font-weight: bold;
+  }
+
+  @media screen and (max-width:750px) {
     .Home_content {
        flex-direction: column;
     }

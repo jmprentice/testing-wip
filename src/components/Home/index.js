@@ -22,6 +22,7 @@ const Home = (props) => {
     const [ parallelState, setParallelState ] = useState();
     const [ view, setView ] = useState("chapter");
     const [ secondaryPanelVisible, setSecondaryPanelVisible ] = useState(false);
+    const [ sourcesVisible, setSourcesVisible ] = useState(false);
     const [ noteState, setNoteState ] = useState("");
     const [ noteVisible, setNoteVisible ] = useState(false);
 
@@ -31,7 +32,6 @@ const Home = (props) => {
     }
 
     const htmlInput = getHtml();
-
     const htmlToReactParser = new HTMLToReact.Parser();
     const isValidNode = () => { return true; };
     const processNodeDefinitions = new HTMLToReact.ProcessNodeDefinitions(React);
@@ -112,8 +112,6 @@ const Home = (props) => {
         }
     ];
     const reactComponent = htmlToReactParser.parseWithInstructions(htmlInput, isValidNode, processingInstructions);
-
- 
     const correspProcessingInstructions = [
         
         {
@@ -142,7 +140,7 @@ const Home = (props) => {
                         view={view}
                     >
                         {children}
-                    </Corresp>
+                    </Corresp>  
                 );
             }
         },
@@ -155,68 +153,33 @@ const Home = (props) => {
     ];
     const correspComponent = htmlToReactParser.parseWithInstructions(htmlInput, isValidNode, correspProcessingInstructions);
 
-    /*const noteProcessingInstructions = [
-        
-        {
-
-            shouldProcessNode: node => {
-                
-                return (
-                    node.name === 'tei-note' && 
-                    node.attribs 
-                );
-            },
-            processNode: (node, children) => {
-                return (
-                    <Note
-                        target={node.attribs.target && node.attribs.target.replace(/#/g,"")}
-                        noteState={noteState}
-                    >
-                        {[children[1]]}
-                    </Note>
-                    
-                );
-            }
-        },
-        {
-            shouldProcessNode: node => {
-                return node.name !== 'tei-body' && node.name !== 'tei-header' && 
-                    (!node.attribs || node.attribs.type !== 'editorial');
-            },
-            processNode: processNodeDefinitions.processDefaultNode
-        }
-    ];
-    const noteComponent = htmlToReactParser.parseWithInstructions(htmlInput, isValidNode, noteProcessingInstructions);
-*/
-    
-
     return (
-        <div>
-            <ViewOptions view={view} params={params}/>
+        <div className={`sources-${sourcesVisible}`}>
+            <ViewOptions 
+                view={view} 
+                params={params}
+                sourcesVisible={sourcesVisible}
+                setSourcesVisible={setSourcesVisible}
+            />
             <div className="Home_content">
                 <Panel size="large">
                     <TEI 
                         view={view} 
                         children={reactComponent} 
                     />
-                </Panel> 
-      
+                </Panel>      
                 <Panel 
                     size="medium" 
                     visibility={secondaryPanelVisible}
                     setVisibility={setSecondaryPanelVisible}
-                >
-                                  
-                        { !parallelState &&
+                >                            
+                    { !parallelState &&
                         <p className="Home_hint">Hover over a section of the text to view its chiastic parallel in this panel.</p>
                     }
                     <CorrespPanel>
                         {correspComponent}
-                    </CorrespPanel> 
-                       
-                        
-                </Panel>
-          
+                    </CorrespPanel>       
+                </Panel>          
             </div>
         </div>
     );
