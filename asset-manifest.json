@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/testing-wip/static/css/main.27d4b9ce.chunk.css",
+    "main.js": "/testing-wip/static/js/main.ae86dc61.chunk.js",
+    "main.js.map": "/testing-wip/static/js/main.ae86dc61.chunk.js.map",
+    "runtime-main.js": "/testing-wip/static/js/runtime-main.3ebc5483.js",
+    "runtime-main.js.map": "/testing-wip/static/js/runtime-main.3ebc5483.js.map",
+    "static/css/2.150d169a.chunk.css": "/testing-wip/static/css/2.150d169a.chunk.css",
+    "static/js/2.f6026d93.chunk.js": "/testing-wip/static/js/2.f6026d93.chunk.js",
+    "static/js/2.f6026d93.chunk.js.map": "/testing-wip/static/js/2.f6026d93.chunk.js.map",
+    "static/js/3.30b9239d.chunk.js": "/testing-wip/static/js/3.30b9239d.chunk.js",
+    "static/js/3.30b9239d.chunk.js.map": "/testing-wip/static/js/3.30b9239d.chunk.js.map",
+    "index.html": "/testing-wip/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/testing-wip/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.27d4b9ce.chunk.css.map": "/testing-wip/static/css/main.27d4b9ce.chunk.css.map",
+    "static/js/2.f6026d93.chunk.js.LICENSE.txt": "/testing-wip/static/js/2.f6026d93.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3ebc5483.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.f6026d93.chunk.js",
+    "static/css/main.27d4b9ce.chunk.css",
+    "static/js/main.ae86dc61.chunk.js"
+  ]
+}
