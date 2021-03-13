@@ -6,5 +6,5 @@
 
 .Header {
     display: flex;
-    justify-items: flex-end;
+    justify-items: space-between;
 }

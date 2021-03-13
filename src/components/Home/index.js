@@ -20,6 +20,7 @@ import './index.css';
 const Home = (props) => {
     const { search } = useLocation();
     const [ parallelState, setParallelState ] = useState();
+    const [ correspState, setCorrespState ] = useState();
     const [ view, setView ] = useState("chapter");
     const [ secondaryPanelVisible, setSecondaryPanelVisible ] = useState(false);
     const [ sourcesVisible, setSourcesVisible ] = useState(false);
@@ -30,6 +31,54 @@ const Home = (props) => {
     if(params.view && params.view !== view)  {
         setView(params.view);
     }
+
+    const parallelThemes= {
+        "A": "6:1-4 Sexual wickedness, God proclaims a limit",
+        "B": '6:5: God observes man’s heart is “evil continually”',
+        "C": '6:6-8 God speaks in “His heart”',
+        "D": '6:9-10 Generations',
+        "E": '6:11-18a Instructions re: preserving life, covenant with Noah',
+        "F": '6:18b-7:10 Seven days; God commands, Noah obeys and enters ark',
+        "G": '7:11 God opens window',
+        "H": '7:12-17a Forty days',
+        "I": '7:17b-20 Waters increase, mountains covered',
+        "J": 'Death, a hundred fifty days',
+        "J'": 'Life, a hundred fifty days',
+        "I'": 'Life, a hundred fifty days',
+        "H'": '8:6a Forty days',
+        "G'": '8:6b Noah opens window',
+        "F'": '8:7-20 Seven days; God commands, Noah obeys and exits ark',
+        "C'": '8:21a God speaks in “His heart”',
+        "B'": '8:21b-22 God observes man’s heart is “evil from his youth”',
+        "E'": '9:1-17 Instructions re: taking of life, covenant with all living',
+        "D'": '9:18-19 Generations',
+        "A'": '9:20-9:28 Sexual wickedness, Noah proclaims a limit'
+    };
+
+    const parallelLevels = { 
+        "A": 1,
+        "B": 2,
+        "C": 3,
+        "D": 4,
+        "E": 5,
+        "F": 6,
+        "G": 7,
+        "H": 8,
+        "I": 9,
+        "J": 10,
+        "J'": 10,
+        "I'": 9,
+        "H'": 8,
+        "G'": 7,
+        "F'": 6,
+        "C'": 3,
+        "B'": 2,
+        "E'": 5,
+        "D'": 4,
+        "A'": 1
+    }
+
+
 
     const htmlInput = getHtml();
     const htmlToReactParser = new HTMLToReact.Parser();
@@ -64,13 +113,19 @@ const Home = (props) => {
                 return node.name === 'tei-div' && node.attribs && node.attribs.type === 'parallel';
             },
             processNode: (node, children) => {
+                const id = node.attribs && node.attribs.id ? node.attribs.id.replace(/pr/g,"'") : "";
+                const corresp = node.attribs && node.attribs.corresp ? node.attribs.corresp.replace(/pr/g,"'").replace('#',''): "";
                 return (
                     <Parallel 
+                        key={id}
                         parallelState={parallelState}
                         setParallelState={setParallelState}
-                        id={node.attribs && node.attribs.id && node.attribs.id.replace(/pr/g,"'")}
+                        setCorrespState={setCorrespState}
+                        id={id}
+                        corresp={corresp} 
                         view={view}  
-                        theme="This is where the theme would go"                      
+                        theme={parallelThemes[id]}     
+                        level={parallelLevels[id]}                 
                     >
                         {children}
                     </Parallel>
@@ -166,6 +221,8 @@ const Home = (props) => {
                     <TEI 
                         view={view} 
                         children={reactComponent} 
+                        parallelState={parallelState}
+                        parallelThemes={parallelThemes}
                     />
                 </Panel>      
                 <Panel 
@@ -173,10 +230,13 @@ const Home = (props) => {
                     visibility={secondaryPanelVisible}
                     setVisibility={setSecondaryPanelVisible}
                 >                            
-                    { !parallelState &&
-                        <p className="Home_hint">Hover over a section of the text to view its chiastic parallel in this panel.</p>
-                    }
-                    <CorrespPanel>
+                    
+                    <CorrespPanel 
+                        parallelState={parallelState}
+                        correspState={correspState}
+                        parallelThemes={parallelThemes}
+                        view={view}
+                    >
                         {correspComponent}
                     </CorrespPanel>       
                 </Panel>          

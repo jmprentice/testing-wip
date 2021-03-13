@@ -1,1 +1,17 @@
+.CorrespPanel_content {
+    padding-top: 20px;
+    font-family: "Lora", "Serif";
+}
 
+
+.CorrespPanel .MuiAppBar-root {
+    margin: 0 -20px 0 -20px;
+    width: calc(100% + 40px);
+   
+}
+
+@media screen and (max-width:800px) {
+    .CorrespPanel {
+        padding-top: 10px;
+    }
+}

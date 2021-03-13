@@ -18,7 +18,7 @@
     font-weight: bold;
   }
 
-  @media screen and (max-width:750px) {
+  @media screen and (max-width:800px) {
     .Home_content {
        flex-direction: column;
     }

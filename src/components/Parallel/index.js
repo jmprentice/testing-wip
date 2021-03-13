@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import './index.css';
 
 const Parallel = (props) => {
@@ -9,29 +9,31 @@ const Parallel = (props) => {
 
     const handleParallelChange = (event) => {
         props.setParallelState(props.id);
+        props.setCorrespState(props.corresp);
        //event.stopPropagation();
     }
 
         
     return (
-        <span className={className} onMouseOver={handleParallelChange}>
-            {props.view === "chiastic" &&
-                <p>{props.id}</p>
-            }
-            {props.view !== "outline" &&
+        <Fragment>
+        {props.view !== "outline" &&
+            <span className={className} tabindex="0" onMouseOver={handleParallelChange} onFocus={handleParallelChange}>
+                {props.view === "chiastic" &&
+                    <p>{props.id}</p>
+                }
                 <span >
                     {props.children}
                 </span>
-            }
-            {props.view === "outline" &&
-                <span className="Parallel_theme">
+            </span>
+        }
+        {props.view === "outline" &&
+            <div className={className} tabindex="0"  onMouseOver={handleParallelChange} onFocus={handleParallelChange}>
+                <span className={`Parallel_theme Parallel_${props.level}`}>
                     <span className="Parallel_label">{props.id}</span> {props.theme}
                 </span>
-            }
-            
-     
-
-        </span>
+            </div>
+        }
+        </Fragment>
     );
 }
 
